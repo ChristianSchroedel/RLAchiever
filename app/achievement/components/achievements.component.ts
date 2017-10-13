@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { RouterExtensions } from 'nativescript-angular/router';
 
 @Component({
   moduleId: module.id,
@@ -7,5 +8,18 @@ import { Component, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AchievementsComponent {
-  public achievements = ['1', '2', '3', '4', '5'];
+  public achievements = [
+    {id: '1'},
+    {id: '2'},
+    {id: '3'},
+    {id: '4'},
+    {id: '5'}
+  ];
+
+  constructor(private router: RouterExtensions) {
+  }
+
+  public showDetails(achievement: any) {
+    this.router.navigate(['achievements', achievement.id]);
+  }
 }

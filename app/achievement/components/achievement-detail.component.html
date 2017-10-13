@@ -1,0 +1,16 @@
+<ActionBar class="action-bar" title="Detail">
+  <NavigationButton android.systemIcon="ic_menu_back" [nsRouterLink]="['..']"></NavigationButton>
+</ActionBar>
+<StackLayout orientation="vertical">
+  <Image width="200" height="200" class="m-10" style="background-color: red;"></Image>
+  <Label class="h2 text-center m-y-15" [text]="'Your Progress'"></Label>
+
+  <GridLayout rows="auto auto" columns="* auto" class="m-x-30 m-y-10">
+    <Label row="0" col="0" class="h3 font-weight-bold text-center m-x-auto m-y-auto" [text]="'20/30'"></Label>
+    <Button row="0" col="1" class="btn btn-primary btn-active" text="Add"></Button>
+    <Progress row="1" col="0" colspan="2" class="progress" [value]="20" [maxValue]="30"></Progress>
+  </GridLayout>
+
+  <Label class="h3 text-center font-italic m-t-5" [text]="'Motivation right here!'"></Label>
+  <Label class="h3 text-center m-t-30" [text]="'Expires at 10.10.2017'"></Label>
+</StackLayout>

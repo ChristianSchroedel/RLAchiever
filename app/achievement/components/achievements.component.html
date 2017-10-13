@@ -1,10 +1,10 @@
 <ActionBar class="action-bar" title="RLAchiever">
 </ActionBar>
 <ListView class="list-group" [items]="achievements">
-  <ng-template let-achievement="item">
-    <GridLayout class="list-group-item" rows="* * auto" columns="auto *">
+  <ng-template let-achievement="item" let-i="index">
+    <GridLayout class="list-group-item" rows="* * auto" columns="auto *" [nsRouterLink]="['/achievements', achievement.id]">
       <Image row="0" col="0" rowspan="3" class="thumb" width="80" height="80" style="background-color: red;"></Image>
-      <Label row="0" col="1" colspan="2" class="list-group-item-heading" [text]="'Title of your achievement'"></Label>
+      <Label row="0" col="1" colspan="2" class="list-group-item-heading" [text]="'Title of your achievement' + achievement.id"></Label>
       <Progress row="1" col="1" class="progress" [value]="20" [maxValue]="30"></Progress>
       <Label row="2" col="1" class="list-group-item-text font-italic text-right" [text]="'20 days left'"></Label>
     </GridLayout>
