@@ -6,3 +6,4 @@ hooks
 platforms
 
 app/**/*.js
+references.d.ts
